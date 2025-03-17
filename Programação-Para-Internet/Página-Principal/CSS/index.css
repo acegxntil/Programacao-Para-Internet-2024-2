@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .trabalhos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .trabalho {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    overflow: hidden; 
+  }
+  
+  .trabalho:hover {
+    transform: translateY(-5px);
+  }
+  
+  h2 {
+    color: #2c5282;
+    margin-bottom: 10px;
+  }
+  
+  .trabalho p {
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .trabalho a {
+    display: inline-block;
+    background-color: #2c5282;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    word-wrap: break-word; 
+  }
+  
+  .trabalho a:hover {
+    background-color: #1a365d;
+  }
+  
+  .sub-exercicios {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; 
+  }
+  
+  .sub-exercicios a {
+    flex: 1;
+    text-align: center;
+    font-size: 0.9em;
+    min-width: 120px; 
+  }
+  
+  @media screen and (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+    
+    .trabalhos {
+      grid-template-columns: 1fr;
+      padding: 10px;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .sub-exercicios {
+      flex-direction: column;
+      gap: 8px; 
+    }
+    
+    .trabalho {
+      padding: 15px; 
+    }
+    
+    .trabalho a {
+      padding: 8px 12px; 
+      font-size: 0.85em; 
+      width: 100%; 
+    }
+  }

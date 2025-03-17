@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicação da Saída DOM</title>
+    <link rel="stylesheet" href="/Trabalho-6/trabalho6/ex4/css/styles.css">
+</head>
+<body>
+    <h1>Explicação da Saída do Código JavaScript - Árvore DOM</h1>
+    
+    <section>
+        <h2>O Código Original</h2>
+        <pre id="codigo-original">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Nós na Árvore DOM&lt;/title&gt;
+  &lt;style&gt;
+    img { width: 100px; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2&gt;Tipos de nós na árvore DOM&lt;/h2&gt;
+  &lt;input type="text" id="myInput"&gt;
+  &lt;!-- comentário --&gt;
+  &lt;pre id="output"&gt;&lt;/pre&gt;
+  &lt;script&gt;
+    const output = document.querySelector("#output");
+    for (let node of document.body.childNodes)
+      output.textContent += node.constructor.prototype + '\n';
+    const input = document.querySelector("#myInput");
+    output.textContent += (input instanceof HTMLInputElement) + '\n';
+    output.textContent += (input instanceof HTMLElement) + '\n';
+    output.textContent += (input instanceof Element) + '\n';
+    output.textContent += (input instanceof Node) + '\n';
+    output.textContent += (input instanceof EventTarget) + '\n';
+    output.textContent += document.constructor.prototype + '\n';
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </section>
+
+    <section>
+        <h2>Explicação da Saída</h2>
+        
+        <div class="nota">
+            <p>A árvore DOM (Document Object Model) é uma representação em memória do documento HTML onde cada elemento, comentário ou texto é um nó na árvore.</p>
+        </div>
+
+        <h3>Parte 1: Filhos do body</h3>
+        <p>O código percorre todos os filhos diretos do elemento &lt;body&gt; e mostra o protótipo de cada um:</p>
+        <ul>
+            <li>Espaços em branco: <code>Text.prototype</code></li>
+            <li>Elemento h2: <code>HTMLHeadingElement.prototype</code></li>
+            <li>Elemento input: <code>HTMLInputElement.prototype</code></li>
+            <li>Comentário: <code>Comment.prototype</code></li>
+            <li>Elemento pre: <code>HTMLPreElement.prototype</code></li>
+            <li>Elemento script: <code>HTMLScriptElement.prototype</code></li>
+        </ul>
+
+        <h3>Parte 2: Herança do elemento input</h3>
+        <p>O código verifica a hierarquia de herança do elemento input:</p>
+        <table>
+            <tr>
+                <th>Verificação</th>
+                <th>Resultado</th>
+            </tr>
+            <tr>
+                <td>input instanceof HTMLInputElement</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>input instanceof HTMLElement</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>input instanceof Element</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>input instanceof Node</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>input instanceof EventTarget</td>
+                <td>true</td>
+            </tr>
+        </table>
+
+        <h3>Parte 3: Protótipo do documento</h3>
+        <p>A última linha mostra o protótipo do objeto document: <code>HTMLDocument.prototype</code></p>
+    </section>
+
+    <section>
+        <h2>Hierarquia dos Objetos</h2>
+        <div class="hierarquia">
+            <div>EventTarget</div>
+            <div>↑</div>
+            <div>Node</div>
+            <div>↑</div>
+            <div>Element</div>
+            <div>↑</div>
+            <div>HTMLElement</div>
+            <div>↑</div>
+            <div>HTMLInputElement</div>
+        </div>
+    </section>
+
+    <button id="executar">Executar Exemplo</button>
+    <div id="resultado"></div>
+
+    <script src="/Trabalho-6/trabalho6/ex4/js/script.js"></script>
+</body>
+</html>

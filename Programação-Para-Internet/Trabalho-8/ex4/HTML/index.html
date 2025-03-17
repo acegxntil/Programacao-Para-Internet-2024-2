@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="/Trabalho-8/ex4/CSS/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+        <form id="registrationForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" placeholder="Digite o nome do usuário">
+            <span class="error-message" id="usernameError">O usuário deve ser preenchido</span>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" placeholder="Digite a senha">
+            <span class="error-message" id="passwordError">A senha deve ser preenchida</span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Digite o email">
+            <span class="error-message" id="emailError">O email deve ser preenchido</span>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+    <script src="/Trabalho-8/ex4/JS/script.js"></script>
+</body>
+</html>
